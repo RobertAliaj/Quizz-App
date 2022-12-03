@@ -1,0 +1,37 @@
+body {
+    background-color: #007AFF !important;
+}
+
+.container {
+    background-color: #007AFF !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.px {
+    height: 150px;
+    object-fit: cover;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 25px;
+}
+
+.card {
+    width: 100% !important;
+}
+
+.btn-child {
+    display: flex;
+    width: 15%;
+    justify-content: space-evenly;
+}
+
+/* .alert {
+    background-color: red !important;
+} */
