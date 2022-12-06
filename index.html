@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
 
 
     <nav class="navbar bg-light">
@@ -37,29 +37,36 @@
 
     <div class="container">
         <div class="card" style="width: 18rem;">
-            <img src="img/quiz.png" class="card-img-top px">
-            <div class="card-body">
-                <h5 class="card-title">Frage</h5>
+            <img src="img/quiz.png" class="card-img-top px" id="quizz-pic">
+
+            <div id="endScreen" style="display: none;">
+                <h1> Glückwunsch</h1>
+                <p> Du hast so Viele Fragen richtig beantwortet.</p>
+            </div>
+
+            <div class="card-body" id="questionScreen">
+                <h5 class="card-title" id="question">Frage</h5>
                 <p class="card-text"></p>
-                <div class="alert alert-success">
-                    A simple success alert—check it out!
+                <div class="alert" id="answer_1" onclick="answer('answer_1')">
+                    Answer
                 </div>
-                <div class="alert alert-success">
-                    A simple success alert—check it out!
+                <div class="alert" id="answer_2" onclick="answer('answer_2')">
+                    Answer
                 </div>
-                <div class="alert alert-success">
-                    A simple success alert—check it out!
+                <div class="alert" id="answer_3" onclick="answer('answer_3')">
+                    Answer
                 </div>
-                <div class="alert alert-success">
-                    A simple success alert—check it out!
+                <div class="alert" id="answer_4" onclick="answer('answer_4')">
+                    Answer
                 </div>
                 <div class="btn-div">
                     <div class="btn-child">
-                        <b>1</b> von <b>5</b>
+                        <b id="presentQuestion">1</b> von <b id="allQuestions">5</b>
                         <p> Fragen</p>
                     </div>
                     <div>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <button class="btn btn-primary" disabled id="nextButton" onclick="nextQuestion()"> Nächste
+                            Frage</button>
                     </div>
                 </div>
             </div>

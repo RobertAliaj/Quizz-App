@@ -15,6 +15,14 @@ body {
     object-fit: cover;
 }
 
+.btn :hover {
+    background-color: #0074f0;
+}
+
+.btn:focus {
+    border: 1px solid black;
+}
+
 .btn-div {
     display: flex;
     justify-content: center;
@@ -32,6 +40,27 @@ body {
     justify-content: space-evenly;
 }
 
-/* .alert {
-    background-color: red !important;
-} */
+.container-fluid {
+    justify-content: center !important;
+}
+
+.alert {
+    border: 1px solid rgb(0 0 0 / 20%);
+    cursor: pointer !important;
+}
+
+.alert:hover {
+    background-color: rgb(0 0 0 / 4%);
+}
+
+.bg-success,
+.bg-danger {
+    color: white;
+}
+
+.show-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
