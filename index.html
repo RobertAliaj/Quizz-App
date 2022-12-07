@@ -16,16 +16,18 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 
-
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-
 
 
 </head>
 
 <body onload="init()">
 
+    <div class="progress d-none" id="progressBars">
+        <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 0%;"
+            id="progressBar">25%</div>
+    </div>
 
     <nav class="navbar bg-light">
         <div class="container-fluid">
@@ -33,18 +35,38 @@
         </div>
     </nav>
 
-
-
     <div class="container">
+        <div class="logo-div">
+            <img src="img/logo.png" class="logo">
+            <div class="quiz-div">
+                <span>Html</span>
+                <span>Css</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
         <div class="card" style="width: 18rem;">
             <img src="img/quiz.png" class="card-img-top px" id="quizz-pic">
 
-            <div id="endScreen" style="display: none;">
-                <h1> Glückwunsch</h1>
-                <p> Du hast so Viele Fragen richtig beantwortet.</p>
+
+            <div id="endScreen"  style="display: none;" class="show-result">
+                <h1> Congratulations</h1>
+                <div class="my-score">
+                    <span>Your Score</span>
+                    <p><b id="rightQuestions">X</b> <b>/</b> <b id="allQuestionsResult">X</b></p>
+                </div>
+                <button class="btn btn-primary restart-game-button" id="restart-game" onclick="restartGame()"> Replay</button>
             </div>
 
-            <div class="card-body" id="questionScreen">
+            <div class="welcome-div" id="welcome">
+                <h3>Welcome to my <br> Awesome Quiz App</h3>
+                <p>Ready for the Challenge ?</p>
+                <button class="btn start-btn" id="startButton" onclick="startGame()">Start Now <img
+                        src="img/arrow-30-24.ico"></button>
+
+            </div>
+            <div class="card-body d-none" id="questionScreen">
+                <div></div>
                 <h5 class="card-title" id="question">Frage</h5>
                 <p class="card-text"></p>
                 <div class="alert" id="answer_1" onclick="answer('answer_1')">

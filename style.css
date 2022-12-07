@@ -1,18 +1,13 @@
-body {
-    background-color: #007AFF !important;
-}
-
 .container {
-    background-color: #007AFF !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
 
 .px {
-    height: 150px;
-    object-fit: cover;
+    height: 0px;
+    /* object-fit: cover; */
 }
 
 .btn :hover {
@@ -28,10 +23,14 @@ body {
     justify-content: center;
     align-items: baseline;
     gap: 25px;
+    margin-top: 35px;
 }
 
 .card {
     width: 100% !important;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 75%;
 }
 
 .btn-child {
@@ -63,4 +62,137 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
+}
+
+.end-screen{
+    margin-top: 50px;
+}
+
+.end-screen-pic {
+    height: 100px;
+    object-fit: contain;
+    margin-top: 50px;
+}
+
+.restart-game-button {
+    margin-bottom: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.logo-div {
+    height: 90%;
+    width: 200px;
+    background-color: darkblue;
+    height: 75%;
+    width: 200px;
+    background-color: darkblue;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 28px;
+}
+
+.quiz-div {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 24px;
+    padding-right: 6px;
+}
+
+
+.progress {
+    border-radius: 0;
+}
+
+.progress-bar {
+    background-color: darkblue;
+    border-radius: 0px;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.alert {
+    display: flex;
+    gap: 16px;
+}
+
+.bg-answer {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(0 0 0 / 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-none {
+    display: none;
+}
+
+.welcome-div {
+    background-image: url(img/brainbg.jpg);
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.start-btn {
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.start-btn img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.start-btn img:hover{
+    background-color: orangered !important; 
+}
+
+.start-btn:hover {
+    color: white;
+    background-color: orangered;
+    border-color: unset;
+}
+
+.my-score{
+    display: flex;
+    gap: 16px;
+}
+
+.my-score span{
+    font-weight: bold;
+    color: orange;
+    font-size: 22px;
+}
+
+.my-score p{
+    font-size: 20px;
 }
