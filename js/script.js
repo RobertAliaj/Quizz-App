@@ -5,8 +5,8 @@ let rightQuestions = 0;
 let currentQuestion = 0;
 
 
-let audioSuccess = new Audio('audio/success.mp3');
-let audioWrong = new Audio('audio/wrong.mp3');
+let audioSuccess = new Audio('../audio/success.mp3');
+let audioWrong = new Audio('../audio/wrong.mp3');
 
 
 function init() {
@@ -15,7 +15,7 @@ function init() {
 }
 
 
-function startGame(){
+function startGame() {
     document.getElementById('welcome').classList.add('d-none');             // remove welcome screen
     document.getElementById('questionScreen').classList.remove('d-none');   // show question screen
     document.getElementById('progressBars').classList.remove('d-none');     // show progress bar
@@ -24,7 +24,6 @@ function startGame(){
 
 
 function showQuestion() {
-
     if (gameOver()) {
         showEndScreen();
     } else {
@@ -57,10 +56,11 @@ function updateToNextQuestion() {
     document.getElementById('answer_4').innerHTML = `<div class="bg-answer"><b>D</b></div> ${question['answer_4']}`;       // show the content
 }
 
+
 function showEndScreen() {
     document.getElementById('endScreen').style = '';                            //remove display none from endscreen
     document.getElementById('questionScreen').style = 'display: none;';         // add d-none to questionscreen
-    document.getElementById('quizz-pic').src = 'img/result.png';                // change quiz image to trophy img 
+    document.getElementById('quizz-pic').src = '../img/result.png';                // change quiz image to trophy img 
     document.getElementById('quizz-pic').classList.add('end-screen-pic');       // add new style to the trophy img
     document.getElementById('allQuestionsResult').innerHTML = questions.length; // show how many questions i have on the result (endscreen)
     document.getElementById('rightQuestions').innerHTML = rightQuestions;       // show how many queestion i answered right
@@ -88,15 +88,17 @@ function heightlightTheRightAnswer(selection) {
 }
 
 
-function highlightWrongAnswer(selection, idOfRightAnswer){
+function highlightWrongAnswer(selection, idOfRightAnswer) {
     document.getElementById(selection).classList.add('bg-danger');         // style die falsche antwort rot 
     document.getElementById(idOfRightAnswer).classList.add('bg-success'); // zeige gleichzeitig auch die Richtige Antwort
     audioWrong.play();
 }
 
+
 function rightAnswerSelected(selectedQuestionNumber, question) {
     return selectedQuestionNumber == question['right_answer']; // wenn das letze Buchstabe von dem Antworts id die gleiche nr wie die right-answer hat
 }
+
 
 function nextQuestion() {
     currentQuestion++;
@@ -120,14 +122,15 @@ function resetAnswerFields() {                                          // wenn 
 
 
 function restartGame() {
+    document.getElementById('nav').classList.remove('title-res');               // show nav-bar responsive
     document.getElementById('welcome').classList.remove('d-none');              // show welcome screen
     document.getElementById('questionScreen').classList.add('d-none');          // hide questionscreen
     document.getElementById('progressBars').classList.add('d-none');            // hide progressbar 
-    document.getElementById('quizz-pic').src = 'img/quiz.png';                  // changequiz picture
+    document.getElementById('quizz-pic').src = '../img/quiz.png';               // changequiz picture
     document.getElementById('questionScreen').style = '';                       // zeige den questionScreen wieder an 
     document.getElementById('endScreen').style = 'display: none;';              // blende den EndScreen aus
     document.getElementById('quizz-pic').classList.remove('end-screen-pic');    // remove the height style from the quizz img
-    rightQuestions = 0;
-    currentQuestion = 0;
+    rightQuestions = 0;                                                         // setze die variablen wieder auf 0 zurück
+    currentQuestion = 0;                                                        // setze die variablen wieder auf 0 zurück
     init();
 }
