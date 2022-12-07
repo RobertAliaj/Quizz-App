@@ -1,0 +1,75 @@
+@media(max-width: 500px) {
+    .container {
+        flex-direction: column;
+        margin-top: 16px;
+        height: 100% !important;
+    }
+
+    .quiz-div {
+        flex-direction: unset;
+        font-size: 16px;
+    }
+
+    .logo-div {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        height: unset;
+        gap: 16px;
+        padding: 10px;
+    }
+
+    .card {
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 0px;
+        position: relative;
+    }
+
+    .welcome-div{
+        height: 70vh;
+    }
+
+    .btn-child {
+        gap: 5px;
+        margin-left: 130px;
+    }
+
+    .btn-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        align-items: unset;
+        gap: 0px;
+        margin-top: 0px;
+    }
+
+    .next-button {
+        margin-left: 96px;
+    }
+
+    .logo {
+        margin-top: 0px;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    .start-btn-res{
+        position: absolute;
+        left: 15px;
+        right: 15px;
+    }
+
+    .title-res{
+        display: none;
+    }
+
+    .alert{
+        margin-bottom: 5px;
+    }
+}
