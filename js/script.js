@@ -1,6 +1,3 @@
-
-
-
 let rightQuestions = 0;
 let currentQuestion = 0;
 
@@ -20,6 +17,7 @@ function startGame() {
     document.getElementById('questionScreen').classList.remove('d-none');   // show question screen
     document.getElementById('progressBars').classList.remove('d-none');     // show progress bar
     document.getElementById('nav').classList.add('title-res');           // hide nav-bar responsive
+    document.getElementById('progressBar').style = `width: 0%;`; 
 }
 
 
@@ -27,8 +25,8 @@ function showQuestion() {
     if (gameOver()) {
         showEndScreen();
     } else {
-        updateProgressBar();
         updateToNextQuestion();
+        enableAnswer();
     }
 }
 
@@ -60,7 +58,7 @@ function updateToNextQuestion() {
 function showEndScreen() {
     document.getElementById('endScreen').style = '';                            //remove display none from endscreen
     document.getElementById('questionScreen').style = 'display: none;';         // add d-none to questionscreen
-    document.getElementById('quizz-pic').src = '../img/result.png';                // change quiz image to trophy img 
+    document.getElementById('quizz-pic').src = '../img/result.png';             // change quiz image to trophy img 
     document.getElementById('quizz-pic').classList.add('end-screen-pic');       // add new style to the trophy img
     document.getElementById('allQuestionsResult').innerHTML = questions.length; // show how many questions i have on the result (endscreen)
     document.getElementById('rightQuestions').innerHTML = rightQuestions;       // show how many queestion i answered right
@@ -74,12 +72,31 @@ function answer(selection) {                                    //selection ist 
 
     if (rightAnswerSelected(selectedQuestionNumber, question)) {
         heightlightTheRightAnswer(selection);
+        disableAnswer();
+        updateProgressBar();
     } else {
         highlightWrongAnswer(selection, idOfRightAnswer);
+        disableAnswer();
+        updateProgressBar();
     }
     document.getElementById('nextButton').disabled = false;  // jedes mal wenn man auf eine Antwort klickt, wird der Button enabled
 }
 
+
+function disableAnswer() {
+    document.getElementById('answer_1').classList.add('disable');           // mach das Antwortfeld unclickbar wenn eine antwort ausgewählt wurde
+    document.getElementById('answer_2').classList.add('disable');           // mach das Antwortfeld unclickbar wenn eine antwort ausgewählt wurde
+    document.getElementById('answer_3').classList.add('disable');           // mach das Antwortfeld unclickbar wenn eine antwort ausgewählt wurde
+    document.getElementById('answer_4').classList.add('disable');           // mach das Antwortfeld unclickbar wenn eine antwort ausgewählt wurde
+}
+
+
+function enableAnswer() {
+    document.getElementById('answer_1').classList.remove('disable');        //mach die nächste Antwort wieder clickbar
+    document.getElementById('answer_2').classList.remove('disable');        //mach die nächste Antwort wieder clickbar
+    document.getElementById('answer_3').classList.remove('disable');        //mach die nächste Antwort wieder clickbar
+    document.getElementById('answer_4').classList.remove('disable');        //mach die nächste Antwort wieder clickbar
+}
 
 function heightlightTheRightAnswer(selection) {
     document.getElementById(selection).classList.add('bg-success'); // style die richtige antwort grün

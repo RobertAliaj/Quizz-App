@@ -195,3 +195,7 @@
 .my-score p{
     font-size: 20px;
 }
+
+.disable{
+    pointer-events: none;
+}
